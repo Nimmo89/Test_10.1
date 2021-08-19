@@ -11,7 +11,7 @@ public class Films {
     private int id;
     private int filmId;
     private String filmName;
-    private int filmDateOpen;
-    private int filmType;
+    private String filmDateOpen;
+    private String filmType;
     private int filmTime;
 }
