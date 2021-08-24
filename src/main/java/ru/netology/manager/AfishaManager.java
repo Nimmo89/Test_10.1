@@ -6,10 +6,6 @@ public class AfishaManager {
     private Films[] films = new Films[0];
     private int maxLenght = 10;
 
-    public AfishaManager(int maxLenght) {
-        this.maxLenght = maxLenght;
-    }
-
     public void add(Films film) {
         Films[] tmp = new Films[films.length + 1];
         for (int i = 0; i < films.length; i++) {
@@ -42,20 +38,6 @@ public class AfishaManager {
         return result;
     }
 
-    public AfishaManager(Films[] films) {
-        this.films = films;
+    public AfishaManager() {
     }
-//    public void removeById(int id) {
-//        // наивная реализация
-//        int length = films.length - 1;
-//        Films[] tmp = new Films[length];
-//        int index = 0;
-//        for (Films item : films) {
-//            if (item.getId() != id) {
-//                tmp[index] = item;
-//                index++;
-//            }
-//        }
-//        films = tmp;
-//    }
 }
