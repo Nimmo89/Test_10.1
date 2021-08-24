@@ -1,21 +1,18 @@
 package ru.netology.manager;
 
 import ru.netology.domain.Films;
+import ru.netology.repository.AfishaRepository;
 
 public class AfishaManager {
-    private Films[] films = new Films[0];
+    private AfishaRepository repository;
     private int maxLenght = 10;
 
     public void add(Films film) {
-        Films[] tmp = new Films[films.length + 1];
-        for (int i = 0; i < films.length; i++) {
-            tmp[i] = films[i];
-        }
-        tmp[tmp.length - 1] = film;
-        films = tmp;
+        repository.save(film);
     }
 
     public Films[] getAll() {
+        Films[] films = repository.findAll();
         Films[] result = new Films[films.length];
         for (int i = 0; i < result.length; i++) {
             result[i] = films[i];
@@ -24,6 +21,7 @@ public class AfishaManager {
     }
 
     public Films[] findOver10() {
+        Films[] films = repository.findAll();
         int resultLength;
         if (films.length < maxLenght) {
             resultLength = films.length;
@@ -38,6 +36,7 @@ public class AfishaManager {
         return result;
     }
 
-    public AfishaManager() {
+    public void removeById(int id) {
+        repository.removeById(id);
     }
 }
