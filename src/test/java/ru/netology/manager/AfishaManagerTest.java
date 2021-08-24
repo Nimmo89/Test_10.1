@@ -31,7 +31,6 @@ class AfishaManagerTest {
 
     @Test
     void add() {
-//        manager.add(f2);
         Films[] returned = new Films[]{f2, f4, f6, f8, f0};
         Mockito.doReturn(returned).when(repository).findAll();
         Films[] expected = new Films[]{f2, f4, f6, f8, f0};
@@ -78,5 +77,5 @@ class AfishaManagerTest {
 //        Films[] actual = manager.getAll();
 //        assertArrayEquals(expected,actual);
 //        Mockito.verify(repository).findAll();
-//    }
+    }
 }
