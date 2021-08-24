@@ -44,13 +44,50 @@ class AfishaRepositoryTest {
         repository.save(f9);
         repository.save(f0);
         repository.save(f11);
+
         Films[] expected = new Films[]{f1, f2, f3, f4, f5, f6, f7, f8, f9, f0, f11};
         Films[] actual = repository.findAll();
         assertArrayEquals(expected,actual);
     }
 
     @Test
+    void findById() {
+        repository.save(f1);
+        repository.save(f2);
+        repository.save(f3);
+        repository.save(f4);
+        repository.save(f5);
+
+        repository.findById(3);
+
+        Films[] expected = new Films[]{f3};
+        Films[] actual = repository.findById(3);
+        assertArrayEquals(expected,actual);
+    }
+
+    @Test
     void removeById() {
+        repository.save(f1);
+        repository.save(f2);
+        repository.save(f3);
+        repository.save(f4);
+        repository.save(f5);
+
+        repository.removeById(5);
+
+        Films[] expected = new Films[]{f1, f2, f3, f4};
+        Films[] actual = repository.findAll();
+        assertArrayEquals(expected,actual);
+    }
+
+    @Test
+    void removeAll() {
+        repository.save(f1);
+        repository.save(f2);
+        repository.save(f3);
+
+        repository.removeAll();
+
         Films[] expected = new Films[0];
         Films[] actual = repository.findAll();
         assertArrayEquals(expected,actual);
