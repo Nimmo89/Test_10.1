@@ -18,6 +18,18 @@ public class AfishaRepository {
         return films;
     }
 
+    public Films[] findById(int id) {
+        Films[] result = new Films[1];
+        int i = 0;
+        for (Films film : films) {
+            if (film.getId() == id) {
+                result[i] = film;
+                i++;
+            }
+        }
+        return result;
+    }
+
     public void removeById(int id) {
         int length = films.length - 1;
         Films[] tmp = new Films[length];
@@ -29,5 +41,10 @@ public class AfishaRepository {
             }
         }
         films = tmp;
+    }
+
+    public void removeAll() {
+        Films[] empty = new Films[0];
+        films = empty;
     }
 }
