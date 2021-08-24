@@ -14,22 +14,13 @@ class AfishaManagerTest {
 
     @Test
     void add() {
-        int id = 4;
-        manager.add(fo);
-    }
-
-    @Test
-    void removeById() {
-       int idToRemove = 1;
-       manager.removeById(idToRemove);
-
-       Films[] actual = manager.getAll();
-       Films[] expected = new Films[]{third, second};
-
-        assertArrayEquals(expected, actual);
     }
 
     @Test
     void getAll() {
+    }
+
+    @Test
+    void findOver10() {
     }
 }
