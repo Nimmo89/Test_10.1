@@ -6,18 +6,23 @@ public class AfishaManager {
     private Films[] films = new Films[0];
     private int maxLenght = 10;
 
+    public AfishaManager(int maxLenght) {
+        this.maxLenght = maxLenght;
+    }
+
+    public AfishaManager() {
+    }
+
     public void add(Films film) {
         if (maxLenght < 10) {
         // создаём новый массив размером на единицу больше
             int length = films.length + 1;
             Films[] tmp = new Films[length];
-            System.arraycopy(films, 0, tmp, 0, films.length);
+            System.arraycopy(film, 0, tmp, 0, films.length);
             // кладём последним наш элемент
             int lastIndex = tmp.length - 1;
             tmp[lastIndex] = film;
-            films = tmp;
-        } else {
-            getAll();
+            film = tmp;
         }
     }
 
