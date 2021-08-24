@@ -22,6 +22,29 @@ public class AfishaManager {
         films = tmp;
     }
 
+    public Films[] getAll() {
+        Films[] result = new Films[films.length];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = films[i];
+        }
+        return result;
+    }
+
+    public Films[] findOver10() {
+        int resultLength;
+        if (films.length < maxLenght) {
+            resultLength = films.length;
+        } else {
+            resultLength = maxLenght;
+        }
+        Films[] result = new Films[resultLength];
+        for (int i = 0; i < resultLength; i++) {
+            int index = resultLength - 1 - i;
+            result[i] = films[index];
+        }
+        return result;
+    }
+
 //    public void removeById(int id) {
 //        // наивная реализация
 //        int length = films.length - 1;
@@ -34,15 +57,5 @@ public class AfishaManager {
 //            }
 //        }
 //        films = tmp;
-//    }
-//    public Films[] getAll() {
-//        Films[] result = new Films[films.length];
-//        //перебираем массив в прямом порядке
-//        //но кладём в результаты в обратном
-//        for (int i = 0; i < result.length; i++) {
-//            int index = films.length - i - 1;
-//            result[i] = films[index];
-//        }
-//        return result;
 //    }
 }
