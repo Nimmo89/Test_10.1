@@ -77,5 +77,5 @@ class AfishaManagerTest {
 //        Films[] actual = manager.getAll();
 //        assertArrayEquals(expected,actual);
 //        Mockito.verify(repository).findAll();
-    }
+//    }
 }
