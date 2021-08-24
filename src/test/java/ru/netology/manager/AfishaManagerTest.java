@@ -30,6 +30,15 @@ class AfishaManagerTest {
         Films f11 = new Films(11, 11, "Name11", "27.25.21", "TypeFilm6", 200);
 
     @Test
+    void add() {
+        Films[] returned = new Films[]{f2, f4, f6, f8, f0};
+        Mockito.doReturn(returned).when(repository).findAll();
+        Films[] expected = new Films[]{f2, f4, f6, f8, f0};
+        Films[] actual = manager.getAll();
+        assertArrayEquals(expected,actual);
+    }
+
+    @Test
     void getAll() {
         Films[] returned = new Films[]{f1, f3, f5, f7, f9, f11};
         Mockito.doReturn(returned).when(repository).findAll();
@@ -49,10 +58,10 @@ class AfishaManagerTest {
 
     @Test
     void findOver9() {
-        Films[] returned = new Films[]{f1, f2, f5, f4, f3, f6, f9, f0, f11};
+        Films[] returned = new Films[]{f11, f0, f9, f6, f3, f4, f5, f2, f1};
         Mockito.doReturn(returned).when(repository).findAll();
         Films[] expected = new Films[]{f1, f2, f5, f4, f3, f6, f9, f0, f11};
-        Films[] actual = manager.getAll();
+        Films[] actual = manager.findOver10();
         assertArrayEquals(expected,actual);
         Mockito.verify(repository).findAll();
     }
