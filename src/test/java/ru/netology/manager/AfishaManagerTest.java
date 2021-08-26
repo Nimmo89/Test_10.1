@@ -29,6 +29,17 @@ class AfishaManagerTest {
         Films f0 = new Films(10, 10, "Name10", "07.04.21", "TypeFilm1", 130);
         Films f11 = new Films(11, 11, "Name11", "27.25.21", "TypeFilm6", 200);
 
+//    @Test
+//    void addNotMocito() {
+//        manager.add(f1);
+//        manager.add(f2);
+//        manager.add(f3);
+//
+//        Films[] expected = new Films[]{f1, f2, f3};
+//        Films[] actual = manager.getAll();
+//        assertArrayEquals(expected,actual);
+//    }
+
     @Test
     void add() {
         Films[] returned = new Films[]{f2, f4, f6, f8, f0};
