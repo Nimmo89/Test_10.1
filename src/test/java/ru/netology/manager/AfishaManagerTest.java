@@ -60,7 +60,7 @@ class AfishaManagerTest {
         manager.add(f11);
 
         Films[] expected = new Films[]{f0, f9, f8, f7, f6, f5, f4, f3, f2, f1};
-        Films[] actual = manager.findOver10();
+        Films[] actual = manager.findOver();
         assertArrayEquals(expected,actual);
     }
 
@@ -77,7 +77,7 @@ class AfishaManagerTest {
         manager.add(f9);
 
         Films[] expected = new Films[]{f9, f8, f7, f6, f5, f4, f3, f2, f1};
-        Films[] actual = manager.findOver10();
+        Films[] actual = manager.findOver();
         assertArrayEquals(expected,actual);
     }
 }
