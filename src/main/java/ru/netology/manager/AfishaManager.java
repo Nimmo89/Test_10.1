@@ -23,7 +23,7 @@ public class AfishaManager {
         return result;
     }
 
-    public Films[] findOver() {
+    public Films[] findOverMaxLenght() {
         int resultLength;
         if (films.length < maxLenght) {
             resultLength = films.length;
@@ -36,6 +36,10 @@ public class AfishaManager {
             result[i] = films[index];
         }
         return result;
+    }
+
+    public AfishaManager(int maxLenght) {
+        this.maxLenght = maxLenght;
     }
 
     public AfishaManager() {
