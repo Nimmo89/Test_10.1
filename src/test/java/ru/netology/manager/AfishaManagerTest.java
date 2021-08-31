@@ -95,4 +95,16 @@ class AfishaManagerTest {
         Films[] actual = manager1.findOverMaxLenght();
         assertArrayEquals(expected,actual);
     }
+
+    @Test
+    void getAll4() {
+        manager1.add(f1);
+        manager1.add(f3);
+        manager1.add(f5);
+        manager1.add(f7);
+
+        Films[] expected = new Films[]{f7, f5, f3, f1};
+        Films[] actual = manager1.findOverMaxLenght();
+        assertArrayEquals(expected,actual);
+    }
 }
