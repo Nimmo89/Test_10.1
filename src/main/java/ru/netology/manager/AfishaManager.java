@@ -23,7 +23,7 @@ public class AfishaManager {
         return result;
     }
 
-    public Films[] findOver10() {
+    public Films[] findOver() {
         int resultLength;
         if (films.length < maxLenght) {
             resultLength = films.length;
