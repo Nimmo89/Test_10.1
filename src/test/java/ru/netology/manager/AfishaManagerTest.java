@@ -60,7 +60,7 @@ class AfishaManagerTest {
         manager.add(f0);
         manager.add(f11);
 
-        Films[] expected = new Films[]{f0, f9, f8, f7, f6, f5, f4, f3, f2, f1};
+        Films[] expected = new Films[]{f11, f0, f9, f8, f7, f6, f5, f4, f3, f2, f1};
         Films[] actual = manager.findOverMaxLenght();
         assertArrayEquals(expected,actual);
     }
