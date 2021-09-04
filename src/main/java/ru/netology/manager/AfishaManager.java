@@ -32,7 +32,7 @@ public class AfishaManager {
         }
         Films[] result = new Films[resultLength];
         for (int i = 0; i < resultLength; i++) {
-            int index = resultLength - 1 - i;
+            int index = resultLength - i - 1;
             result[i] = films[index];
         }
         return result;
@@ -44,4 +44,5 @@ public class AfishaManager {
 
     public AfishaManager() {
     }
+
 }
