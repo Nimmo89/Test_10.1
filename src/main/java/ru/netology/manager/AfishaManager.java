@@ -32,7 +32,7 @@ public class AfishaManager {
         }
         Films[] result = new Films[resultLength];
         for (int i = 0; i < resultLength; i++) {
-            int index = resultLength - i - 1;
+            int index = films.length - 1 - i;
             result[i] = films[index];
         }
         return result;
